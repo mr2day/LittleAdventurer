@@ -4,7 +4,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 7
 const SUPER_JUMP_VELOCITY = 25
 
-var coinNumber: int
+#var coinNumber: int
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -66,6 +66,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-func AddCoin(value: int):
-	coinNumber += value
-	print(coinNumber)
+#func AddCoin(value: int):
+#	coinNumber += value
+#	print(coinNumber)
