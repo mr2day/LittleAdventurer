@@ -14,7 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera := $"Neck/FPV Camera"
 @onready var animationPlayer: AnimationPlayer = $VisualNode/AnimationPlayer
 @onready var footStepVFX: GPUParticles3D = $VisualNode/VFX/Footstep_GPUParticles3D
-@onready var collisionBox := $CharacterCollisionBox
+#@onready var collisionBox := $CharacterCollisionBox
 
 
 func _unhandled_input(event: InputEvent):
