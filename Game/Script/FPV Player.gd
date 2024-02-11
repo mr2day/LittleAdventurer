@@ -4,7 +4,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 7
 const SUPER_JUMP_VELOCITY = 25
 
-#var coinNumber: int
+var coinNumber: int
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -14,7 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera := $"Neck/FPV Camera"
 @onready var animationPlayer: AnimationPlayer = $VisualNode/AnimationPlayer
 @onready var footStepVFX: GPUParticles3D = $VisualNode/VFX/Footstep_GPUParticles3D
-#@onready var collisionBox := $CharacterCollisionBox
+@onready var collisionBox := $CharacterCollisionBox
 
 
 func _unhandled_input(event: InputEvent):
@@ -66,6 +66,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-#func AddCoin(value: int):
-#	coinNumber += value
-#	print(coinNumber)
+func AddCoin(value: int):
+	coinNumber += value
+	print(coinNumber)
