@@ -17,7 +17,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var character: Node3D = $VisualNode
 @onready var neck := $Neck
 @onready var camera := $"Neck/FPV Camera"
-@onready var camera2 := $"Neck/FPV Camera2"
 @onready var animationPlayer: AnimationPlayer = $VisualNode/AnimationPlayer
 @onready var footStepVFX: GPUParticles3D = $VisualNode/VFX/Footstep_GPUParticles3D
 @onready var collisionBox := $CharacterCollisionBox
