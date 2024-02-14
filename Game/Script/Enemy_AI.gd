@@ -4,7 +4,7 @@ const SPEED = 0.5
 
 var player: Node3D
 
-@onready var navAgent: NavigationAgent3D = $NavigationAgent3D
+@onready var navAgent: NavigationAgent3D
 @onready var visual: Node3D = $VisualNode
 @onready var animationPlayer: AnimationPlayer = $VisualNode/AnimationPlayer
 
@@ -12,7 +12,18 @@ var direction: Vector3
 var stopDistance: float = 2.2
 
 func _ready():
+	set_physics_process(false)
+	call_deferred("actor_setup")
+	
 	player = get_tree().get_first_node_in_group("Player")
+	navAgent = $NavigationAgent3D 
+	
+func actor_setup():
+	NavigationServer3D.map_changed.connect(Callable(map_ready))
+
+func map_ready(_rid): 
+	set_physics_process(true)
+	NavigationServer3D.map_changed.disconnect(Callable(map_ready))
 
 func _physics_process(delta):
 	navAgent.target_position = player.global_position
